@@ -1,0 +1,15 @@
+E:\Github\Employee-Management-Console-Source-Code-C-Sharp\Employee-Management-Console-Source-Code-C-Sharp\bin\Debug\net6.0\Employee-Management-Console-Source-Code-C-Sharp.exe
+E:\Github\Employee-Management-Console-Source-Code-C-Sharp\Employee-Management-Console-Source-Code-C-Sharp\bin\Debug\net6.0\Employee-Management-Console-Source-Code-C-Sharp.deps.json
+E:\Github\Employee-Management-Console-Source-Code-C-Sharp\Employee-Management-Console-Source-Code-C-Sharp\bin\Debug\net6.0\Employee-Management-Console-Source-Code-C-Sharp.runtimeconfig.json
+E:\Github\Employee-Management-Console-Source-Code-C-Sharp\Employee-Management-Console-Source-Code-C-Sharp\bin\Debug\net6.0\Employee-Management-Console-Source-Code-C-Sharp.dll
+E:\Github\Employee-Management-Console-Source-Code-C-Sharp\Employee-Management-Console-Source-Code-C-Sharp\bin\Debug\net6.0\Employee-Management-Console-Source-Code-C-Sharp.pdb
+E:\Github\Employee-Management-Console-Source-Code-C-Sharp\Employee-Management-Console-Source-Code-C-Sharp\obj\Debug\net6.0\Employee-Management-Console-Source-Code-C-Sharp.csproj.AssemblyReference.cache
+E:\Github\Employee-Management-Console-Source-Code-C-Sharp\Employee-Management-Console-Source-Code-C-Sharp\obj\Debug\net6.0\Employee-Management-Console-Source-Code-C-Sharp.GeneratedMSBuildEditorConfig.editorconfig
+E:\Github\Employee-Management-Console-Source-Code-C-Sharp\Employee-Management-Console-Source-Code-C-Sharp\obj\Debug\net6.0\Employee-Management-Console-Source-Code-C-Sharp.AssemblyInfoInputs.cache
+E:\Github\Employee-Management-Console-Source-Code-C-Sharp\Employee-Management-Console-Source-Code-C-Sharp\obj\Debug\net6.0\Employee-Management-Console-Source-Code-C-Sharp.AssemblyInfo.cs
+E:\Github\Employee-Management-Console-Source-Code-C-Sharp\Employee-Management-Console-Source-Code-C-Sharp\obj\Debug\net6.0\Employee-Management-Console-Source-Code-C-Sharp.csproj.CoreCompileInputs.cache
+E:\Github\Employee-Management-Console-Source-Code-C-Sharp\Employee-Management-Console-Source-Code-C-Sharp\obj\Debug\net6.0\Employee-Management-Console-Source-Code-C-Sharp.dll
+E:\Github\Employee-Management-Console-Source-Code-C-Sharp\Employee-Management-Console-Source-Code-C-Sharp\obj\Debug\net6.0\refint\Employee-Management-Console-Source-Code-C-Sharp.dll
+E:\Github\Employee-Management-Console-Source-Code-C-Sharp\Employee-Management-Console-Source-Code-C-Sharp\obj\Debug\net6.0\Employee-Management-Console-Source-Code-C-Sharp.pdb
+E:\Github\Employee-Management-Console-Source-Code-C-Sharp\Employee-Management-Console-Source-Code-C-Sharp\obj\Debug\net6.0\Employee-Management-Console-Source-Code-C-Sharp.genruntimeconfig.cache
+E:\Github\Employee-Management-Console-Source-Code-C-Sharp\Employee-Management-Console-Source-Code-C-Sharp\obj\Debug\net6.0\ref\Employee-Management-Console-Source-Code-C-Sharp.dll
