@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Employee_Management_Console_Source_Code_C_Sharp
 {
-    internal class Project : ObserverController
+    public class Project : ObserverController
     {
         private int ID;
         private Employee employee = new Employee();

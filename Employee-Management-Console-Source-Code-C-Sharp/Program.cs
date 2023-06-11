@@ -14,7 +14,7 @@ namespace Employee_Management_Console_Source_Code_C_Sharp
         public static ProjectController projectController = new ProjectController();
         public static void Main(string[] args)
         {
-            employeeController.ReadEmployeesFromFile();
+   
             showMenu();
         }
         public static void showMenu()
@@ -91,15 +91,18 @@ namespace Employee_Management_Console_Source_Code_C_Sharp
                      break;
                 case "2":
                     employeeController.AddEmployee();
-                    showEmployeeMenu(); break;
+                    showEmployeeMenu(); 
+                    break;
                 case "3":
                     employeeController.DeleteEmployee();
-                    showEmployeeMenu(); break;
+                    showEmployeeMenu(); 
+                    break;
                 case "4":
                     showMenu(); break;
                 default:
                     Console.WriteLine("WRONG INPUT !!");
-                    showEmployeeMenu(); break;
+                    showEmployeeMenu(); 
+                    break;
             }
         }
         public static void ControlSalariesChoiceMenu(string choice)
@@ -126,11 +129,11 @@ namespace Employee_Management_Console_Source_Code_C_Sharp
             switch (choice)
             {
                 case "1":
-                    projectController.ViewProjectList(); ControlProjectsChoiceMenu(choice); break;
+                    projectController.ViewProjectList(); showProjectsMenu(); break;
                 case "2":
-                    projectController.AddProject(); ControlProjectsChoiceMenu(choice); break;
+                    projectController.AddProject(); showProjectsMenu(); break;
                 case "3":
-                    projectController.DeleteProject(); ControlProjectsChoiceMenu(choice); break;
+                    projectController.DeleteProject(); showProjectsMenu(); break;
                 case "4":
                     showMenu();
                     break;

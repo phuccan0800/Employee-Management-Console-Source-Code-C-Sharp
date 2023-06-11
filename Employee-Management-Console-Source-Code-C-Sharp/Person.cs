@@ -8,12 +8,12 @@ namespace Employee_Management_Console_Source_Code_C_Sharp
 {
     public class Person
     {
-        public int ID { get; set; }
-        public string Name { get; set; }
-        public int Age { get; set; }
-        public string Sex { get; set; }
-        public string Hometown { get; set; }
-        public string Phone { get; set; }
-        public string Birthday { get; set; }
+        protected int ID { get; set; }
+        protected string Name { get; set; }
+        protected int Age { get; set; }
+        protected string Sex { get; set; }
+        protected string Hometown { get; set; }
+        protected string Phone { get; set; }
+        protected string Birthday { get; set; }
     }
 }
