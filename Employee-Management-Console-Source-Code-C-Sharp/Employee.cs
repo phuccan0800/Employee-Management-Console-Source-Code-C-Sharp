@@ -8,22 +8,30 @@ namespace Employee_Management_Console_Source_Code_C_Sharp
 {
     public class Employee : Person
     {
-        private List<Project> projects = new List<Project>();
         private string PositionI;
         private Positon manager = new Manager();
         private Positon newbie = new Newbie();
-        private Salary salary = new Salary();
+        //private Salary salary = new Salary();
         private DateOnly TimeJoined { get; }
         private int Status {get; set;}
         private void AutoSetTimeJoin() { }
         public Employee() { }
         public override string ToString()
         {
-            if (this.PositionI == "manager") return $"{ID}. {Name} | {Age} | {Sex} | {Hometown} | {Phone} | {Birthday} | {TimeJoined} | {manager.GetPositionName} | {Status}";
-            else return $"{ID}. {Name} | {Age} | {Sex} | {Hometown} | {Phone} | {Birthday} | {TimeJoined} | {newbie.GetPositionName} | {Status}";
+            if (this.PositionI == "manager") return $"{ID}. {Name} | {Age} | {Sex} | {Hometown} | {Phone} | {Birthday} | {TimeJoined} | {manager.GetPositionName()} | {Status}";
+            else return $"{ID}. {Name} | {Age} | {Sex} | {Hometown} | {Phone} | {Birthday} | {TimeJoined} | {newbie.GetPositionName()} | {Status}";
         }
 
-        public Employee(int iD, string name, int age, string sex, string hometown,string phone, string birhday, DateOnly timeJoined, string positionI, int status)
+        public Employee(int iD, 
+            string name, 
+            int age, 
+            string sex, 
+            string hometown,
+            string phone, 
+            string birhday, 
+            DateOnly timeJoined, 
+            string positionI, 
+            int status)
         {
             this.ID = iD;
             this.Name = name;
@@ -37,9 +45,9 @@ namespace Employee_Management_Console_Source_Code_C_Sharp
             this.Status = status;
             this.PositionI = positionI;
         }
-        public void CaculatorAge(int age)
+        public int CaculatorAge(DateTime birthday)
         {
-
+            return 0;
         }
 
     }

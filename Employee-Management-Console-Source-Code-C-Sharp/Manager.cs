@@ -10,12 +10,12 @@ namespace Employee_Management_Console_Source_Code_C_Sharp
     {
         private int PositionSalary;
         private int PositionName;
-        public override void GetPositionName()
+        public override string GetPositionName()
         {
             throw new NotImplementedException();
         }
 
-        public override void GetPositionSalary()
+        public override string GetPositionSalary()
         {
             throw new NotImplementedException();
         }

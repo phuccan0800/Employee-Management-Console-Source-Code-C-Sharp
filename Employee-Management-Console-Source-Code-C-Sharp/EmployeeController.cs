@@ -9,6 +9,7 @@ namespace Employee_Management_Console_Source_Code_C_Sharp
     public class EmployeeController : ObserverController
     {
         public static List<Employee> employees = new List<Employee>();
+        private int LastID = 0;
         public  EmployeeController() { }
         public void ViewEmployeeList()
         {
@@ -16,6 +17,23 @@ namespace Employee_Management_Console_Source_Code_C_Sharp
         }
         public void AddEmployee()
         {
+            int choice = 0;
+            LastID++;
+            Console.Write("Enter Name of New Employee: ");
+            string name = Console.ReadLine();
+            do
+            {
+                Console.Write($"Male or Female ? (1 or 2): ");
+                choice = int.Parse(Console.ReadLine());
+            }
+            while (choice != 1 || choice != 2);
+            string sex;
+            if (choice == 1) sex = "Male"; 
+            else if (choice == 2) sex = "Female";
+            Console.Write($"Where ur {name}'s Hometown ?: ");
+            string hometown = Console.ReadLine();
+            Console.Write($"Enter {name}'s Birthday: ");
+            DateTime birthday = DateTime.Parse(Console.ReadLine());
 
         }
         public void DeleteEmployee() 
@@ -46,12 +64,12 @@ namespace Employee_Management_Console_Source_Code_C_Sharp
             {
                 Employee employee = ParseEmployeeFromLine(input);
                 employees.Add(employee);
+                LastID++;
             }
         }
         private static Employee ParseEmployeeFromLine(string line)
         {
             string[] data = line.Split('|');
-            Console.WriteLine(data[0]);
             Employee employee2 = new Employee(int.Parse(data[0]), data[1], int.Parse(data[2]), data[3], data[4], data[5], data[6], DateOnly.Parse(data[7]), data[8], int.Parse(data[9]));
             return employee2;
         }

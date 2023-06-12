@@ -14,7 +14,6 @@ namespace Employee_Management_Console_Source_Code_C_Sharp
         public static ProjectController projectController = new ProjectController();
         public static void Main(string[] args)
         {
-   
             showMenu();
         }
         public static void showMenu()
@@ -82,10 +81,10 @@ namespace Employee_Management_Console_Source_Code_C_Sharp
         }
         public static void ControlEmployeeChoiceMenu(string choice)
         {
+            employeeController.ReadEmployeesFromFile();
             switch (choice)
             {
                 case "1":
-                     employeeController.ReadEmployeesFromFile();
                      employeeController.ViewEmployeeList();
                      showEmployeeMenu();
                      break;

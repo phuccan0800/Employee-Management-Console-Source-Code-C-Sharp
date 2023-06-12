@@ -14,7 +14,7 @@ namespace Employee_Management_Console_Source_Code_C_Sharp
             GetPositionName();
             GetPositionSalary();
         }
-        public abstract void GetPositionName();
-        public abstract void GetPositionSalary();
+        public abstract string GetPositionName();
+        public abstract string GetPositionSalary();
     }
 }
