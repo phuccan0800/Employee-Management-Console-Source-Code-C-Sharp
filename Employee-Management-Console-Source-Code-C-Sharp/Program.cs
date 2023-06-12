@@ -17,6 +17,7 @@ namespace Employee_Management_Console_Source_Code_C_Sharp
         {
             employeeController.ReadEmployeesFromFile();
             projectController.ReadProject();
+            salaryController.ReadSalary();
             showMenu();
         }
         public static void showMenu()
@@ -116,6 +117,7 @@ namespace Employee_Management_Console_Source_Code_C_Sharp
                     Console.Clear();
                     showMenu(); break;
                 default:
+                    Console.Clear();
                     Console.WriteLine("WRONG INPUT !!");
                     showEmployeeMenu(); 
                     break;
@@ -126,17 +128,19 @@ namespace Employee_Management_Console_Source_Code_C_Sharp
             switch (choice)
             {
                 case "1":
-                    employeeController.ReadEmployeesFromFile();
+                    Console.Clear();
                     salaryController.ViewSalaryList();
-                    ControlSalariesChoiceMenu("1"); 
+                    showSalaiesMenu();
                     break;
                 case "2":
+                    employeeController.ViewEmployeeList();
                     salaryController.PaidSalary();
-                    ControlSalariesChoiceMenu(choice); break;
+                    showSalaiesMenu(); break;
                 case "3":
                     Console.Clear();
                     showMenu(); break;
                 default:
+                    Console.Clear();
                     Console.WriteLine("WRONG INPUT !!");
                     showSalaiesMenu(); break;
             }
@@ -163,6 +167,7 @@ namespace Employee_Management_Console_Source_Code_C_Sharp
                     showMenu();
                     break;
                 default:
+                    Console.Clear();
                     Console.WriteLine("WRONG INPUT !!");
                     showProjectsMenu(); break;
             }
