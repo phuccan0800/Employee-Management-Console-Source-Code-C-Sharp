@@ -16,6 +16,7 @@ namespace Employee_Management_Console_Source_Code_C_Sharp
         public static void Main(string[] args)
         {
             employeeController.ReadEmployeesFromFile();
+            projectController.ReadProject();
             showMenu();
         }
         public static void showMenu()
@@ -36,7 +37,8 @@ namespace Employee_Management_Console_Source_Code_C_Sharp
             Console.WriteLine("| 2. Add new Employees     | ");
             Console.WriteLine("| 3. Delete Employees      | ");
             Console.WriteLine("| 4. Search Employees      | ");
-            Console.WriteLine("| 5. Back                  | ");
+            Console.WriteLine("| 5. Edit Employee         | ");
+            Console.WriteLine("| 6. Back                  | ");
             Console.WriteLine("+--------------------------+");
             string choice = Console.ReadLine();
             ControlEmployeeChoiceMenu(choice);
@@ -57,7 +59,8 @@ namespace Employee_Management_Console_Source_Code_C_Sharp
             Console.WriteLine("| 1. View list Projects      | ");
             Console.WriteLine("| 2. Add new Project         | ");
             Console.WriteLine("| 3. Delete Project          | ");
-            Console.WriteLine("| 4. Back                    | ");
+            Console.WriteLine("| 4. Edit Project            |");
+            Console.WriteLine("| 5. Back                    | ");
             Console.WriteLine("+----------------------------+");
             string choice = Console.ReadLine();
             ControlProjectsChoiceMenu(choice);
@@ -103,8 +106,13 @@ namespace Employee_Management_Console_Source_Code_C_Sharp
                     break;
                 case "4":
                     employeeController.SearchEmployee();
+                    showEmployeeMenu();
                     break;
                 case "5":
+                    employeeController.EditEmployee();
+                    showEmployeeMenu();
+                    break;
+                case "6":
                     Console.Clear();
                     showMenu(); break;
                 default:
@@ -126,6 +134,7 @@ namespace Employee_Management_Console_Source_Code_C_Sharp
                     salaryController.PaidSalary();
                     ControlSalariesChoiceMenu(choice); break;
                 case "3":
+                    Console.Clear();
                     showMenu(); break;
                 default:
                     Console.WriteLine("WRONG INPUT !!");
@@ -137,12 +146,20 @@ namespace Employee_Management_Console_Source_Code_C_Sharp
             switch (choice)
             {
                 case "1":
+                    Console.Clear();
                     projectController.ViewProjectList(); showProjectsMenu(); break;
                 case "2":
-                    projectController.AddProject(); showProjectsMenu(); break;
+                    projectController.AddProject();
+                    Console.Clear(); 
+                    showProjectsMenu(); break;
                 case "3":
                     projectController.DeleteProject(); showProjectsMenu(); break;
                 case "4":
+                    Console.Clear();
+                    projectController.ViewProjectList();
+                    projectController.EditProject(); showProjectsMenu(); break;
+                case "5":
+                    Console.Clear();
                     showMenu();
                     break;
                 default:

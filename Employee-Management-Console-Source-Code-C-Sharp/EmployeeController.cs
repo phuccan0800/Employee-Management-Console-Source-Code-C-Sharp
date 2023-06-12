@@ -83,15 +83,54 @@ namespace Employee_Management_Console_Source_Code_C_Sharp
                     employees.RemoveAt(IdDelete);
                     Console.WriteLine("Delete Employee Complete !!!");
                     break;
-
             }
-
         }
         public void EditEmployee()
         {
             Console.Write("Who you want to edit ? (Input his/her ID) : ");
             int id = int.Parse(Console.ReadLine()) - 1;
-
+            Console.WriteLine("Information: ");
+            Console.WriteLine(employees[id].ToString2());
+            int choice=0;
+            do
+            {
+                Console.Write("Choose Information you want to edit (1..8): ");
+                choice = int.Parse(Console.ReadLine());
+            } while (choice > 8 || choice < 1);
+            Console.Write($"Enter New Information: ");
+            string Information = Console.ReadLine();
+            switch (choice)
+            {
+                case 1:
+                    employees[id].SetName(Information);
+                    break;
+                case 2:
+                    employees[id].SetAge(int.Parse(Information));
+                    break; 
+                case 3:
+                    employees[id].SetSex(Information);
+                    break;
+                case 4:
+                    employees[id].SetHometown(Information);
+                    break;
+                case 5:
+                    employees[id].SetPhone(Information);
+                    break;
+                case 6:
+                    employees[id].SetBirthday(DateTime.Parse(Information));
+                    break;
+                case 7:
+                    employees[id].SetTimeJoined(DateTime.Parse(Information));
+                    break;
+                case 8:
+                    employees[id].SetStatus(int.Parse(Information));
+                    break;
+                default:
+                    Console.WriteLine("ERRORR !!! TRY AGAIN !!!!");
+                    EditEmployee();
+                    break;
+            }
+            Console.WriteLine("DONE !!!!");
         }
         public void SearchEmployee() 
         {
@@ -100,7 +139,10 @@ namespace Employee_Management_Console_Source_Code_C_Sharp
             Console.WriteLine("List Found: ");
             foreach (Employee emp in employees)
             {
-
+                if (emp.GetName().Contains(search, StringComparison.OrdinalIgnoreCase))
+                {
+                     Console.WriteLine(emp.ToString());
+                }
             }
         }
         public void UpdateNewInfo(String Action) 
