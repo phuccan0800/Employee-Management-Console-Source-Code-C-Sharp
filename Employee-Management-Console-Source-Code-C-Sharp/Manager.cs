@@ -8,16 +8,16 @@ namespace Employee_Management_Console_Source_Code_C_Sharp
 {
     internal class Manager : Positon
     {
-        private int PositionSalary;
-        private int PositionName;
-        public override string GetPositionName()
+        private int PositionSalary =500000;
+        private string PositionName = "Manager";
+        public override void GetPositionName()
         {
-            throw new NotImplementedException();
+            Console.Write($"{PositionName}:");
         }
 
-        public override string GetPositionSalary()
+        public override void GetPositionSalary()
         {
-            throw new NotImplementedException();
+            Console.Write($"{PositionSalary} VND");
         }
     }
 }

@@ -12,14 +12,14 @@ namespace Employee_Management_Console_Source_Code_C_Sharp
         private Positon manager = new Manager();
         private Positon newbie = new Newbie();
         //private Salary salary = new Salary();
-        private DateOnly TimeJoined { get; }
+        private DateTime TimeJoined { get; }
         private int Status {get; set;}
         private void AutoSetTimeJoin() { }
         public Employee() { }
         public override string ToString()
         {
-            if (this.PositionI == "manager") return $"{ID}. {Name} | {Age} | {Sex} | {Hometown} | {Phone} | {Birthday} | {TimeJoined} | {manager.GetPositionName()} | {Status}";
-            else return $"{ID}. {Name} | {Age} | {Sex} | {Hometown} | {Phone} | {Birthday} | {TimeJoined} | {newbie.GetPositionName()} | {Status}";
+            if (this.PositionI == "manager") return $"{ID}. {Name} | {Age} | {Sex} | {Hometown} | {Phone} | {Birthday} | {TimeJoined} | Manager | {Status}";
+            else return $"{ID}. {Name} | {Age} | {Sex} | {Hometown} | {Phone} | {Birthday.ToString("dd-MM-yyyy")} | {TimeJoined.ToString("dd-MM-yyyy")} | Newbie | {Status}";
         }
 
         public Employee(int iD, 
@@ -28,8 +28,8 @@ namespace Employee_Management_Console_Source_Code_C_Sharp
             string sex, 
             string hometown,
             string phone, 
-            string birhday, 
-            DateOnly timeJoined, 
+            DateTime birhday, 
+            DateTime timeJoined, 
             string positionI, 
             int status)
         {
@@ -42,13 +42,18 @@ namespace Employee_Management_Console_Source_Code_C_Sharp
             this.Birthday = birhday; 
             this.Status = status;  
             this.TimeJoined = timeJoined;
-            this.Status = status;
             this.PositionI = positionI;
+        }
+        public string GetName ()
+        {
+            return this.Name;
         }
         public int CaculatorAge(DateTime birthday)
         {
-            return 0;
+            DateTime currentTime = DateTime.Today;
+            int age = currentTime.Year - birthday.Year;
+            if (currentTime < birthday.AddYears(age)) age--;
+            return age;
         }
-
     }
 }

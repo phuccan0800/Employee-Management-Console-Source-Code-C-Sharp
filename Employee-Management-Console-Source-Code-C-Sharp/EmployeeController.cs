@@ -9,6 +9,8 @@ namespace Employee_Management_Console_Source_Code_C_Sharp
     public class EmployeeController : ObserverController
     {
         public static List<Employee> employees = new List<Employee>();
+        Positon manger = new Manager();
+        Positon newbie = new Newbie();
         private int LastID = 0;
         public  EmployeeController() { }
         public void ViewEmployeeList()
@@ -17,38 +19,94 @@ namespace Employee_Management_Console_Source_Code_C_Sharp
         }
         public void AddEmployee()
         {
-            int choice = 0;
+            int choice = 9;
             LastID++;
             Console.Write("Enter Name of New Employee: ");
             string name = Console.ReadLine();
             do
             {
-                Console.Write($"Male or Female ? (1 or 2): ");
+                Console.Write($"Male or Female ? (1 or 2) (Deafault: Male): ");
                 choice = int.Parse(Console.ReadLine());
             }
-            while (choice != 1 || choice != 2);
-            string sex;
+            while (choice > 2 || choice <1);
+            string sex = "Male";
             if (choice == 1) sex = "Male"; 
             else if (choice == 2) sex = "Female";
-            Console.Write($"Where ur {name}'s Hometown ?: ");
-            string hometown = Console.ReadLine();
-            Console.Write($"Enter {name}'s Birthday: ");
-            DateTime birthday = DateTime.Parse(Console.ReadLine());
-
+            Console.Write($"Where ur {name}'s Hometown ?: "); string hometown = Console.ReadLine();
+            Console.Write($"Enter {name}'s Birthday: "); DateTime birthday = DateTime.Parse(Console.ReadLine());
+            int age = employees[0].CaculatorAge(birthday);
+            Console.Write($" Enter {name} Phone number: ");
+            string phone = Console.ReadLine();
+            DateTime timeJoin = DateTime.Today;
+            Console.Write($"Choose position for {name}: \n1.");
+            manger.getPositionInfor();
+            Console.Write("\n2.");
+            newbie.getPositionInfor();
+            Console.WriteLine("\n");
+            choice = 0;
+            do
+            {
+                Console.Write("Enter Your Choice (1 or 2): ");
+                choice = int.Parse(Console.ReadLine());
+            }
+            while (choice > 2 || choice < 1);
+            string positionName = "NULL";
+            if (choice == 1) positionName = "Manager";
+            else if (choice == 2) positionName = "Newbie";
+            Console.Write("Confirm ADD ? (Y or N): ");
+            string confirm = Console.ReadLine().ToUpper();
+            switch (confirm)
+                {
+                case "N":
+                    LastID--;
+                    Console.WriteLine("Cancel !!");
+                    break;
+                default:
+                    Employee employee = new Employee(LastID, name, age, sex, hometown, phone, birthday, timeJoin, positionName, 1);
+                    employees.Add(employee);
+                    Console.WriteLine("Add Employee Complete !!!");
+                    break;
+                }
         }
         public void DeleteEmployee() 
         {
-            
+            Console.Write("Enter ID of Employee you want to delete: ");
+            int IdDelete = int.Parse(Console.ReadLine()) -1;
+            Console.Write($"Are you sure for Delete {employees[IdDelete].GetName()}  ? (Y or N): ");
+            string confirm = Console.ReadLine().ToUpper();
+            switch (confirm)
+            {
+                case "N":
+                    Console.WriteLine("Cancel !!");
+                    break;
+                default:
+                    employees.RemoveAt(IdDelete);
+                    Console.WriteLine("Delete Employee Complete !!!");
+                    break;
+
+            }
+
         }
         public void EditEmployee()
         {
+            Console.Write("Who you want to edit ? (Input his/her ID) : ");
+            int id = int.Parse(Console.ReadLine()) - 1;
 
         }
-        public void SearchEmployee(string input) 
+        public void SearchEmployee() 
         {
-        
+            Console.Write("Search Input: ");
+            string search = Console.ReadLine();
+            Console.WriteLine("List Found: ");
+            foreach (Employee emp in employees)
+            {
+
+            }
         }
-        public void UpdateNewInfo(String Action) { }
+        public void UpdateNewInfo(String Action) 
+        { 
+
+        }
         public void ReadEmployeesFromFile()
         {
             string[] inputs = new string[]
@@ -70,7 +128,7 @@ namespace Employee_Management_Console_Source_Code_C_Sharp
         private static Employee ParseEmployeeFromLine(string line)
         {
             string[] data = line.Split('|');
-            Employee employee2 = new Employee(int.Parse(data[0]), data[1], int.Parse(data[2]), data[3], data[4], data[5], data[6], DateOnly.Parse(data[7]), data[8], int.Parse(data[9]));
+            Employee employee2 = new Employee(int.Parse(data[0]), data[1], int.Parse(data[2]), data[3], data[4], data[5], DateTime.Parse(data[6]), DateTime.Parse(data[7]), data[8], int.Parse(data[9]));
             return employee2;
         }
 

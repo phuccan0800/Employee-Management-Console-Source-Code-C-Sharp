@@ -14,6 +14,6 @@ namespace Employee_Management_Console_Source_Code_C_Sharp
         protected string Sex { get; set; }
         protected string Hometown { get; set; }
         protected string Phone { get; set; }
-        protected string Birthday { get; set; }
+        protected DateTime Birthday { get; set; }
     }
 }

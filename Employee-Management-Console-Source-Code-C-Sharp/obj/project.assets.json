@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Github\\Employee-Management-Console-Source-Code-C-Sharp\\Employee-Management-Console-Source-Code-C-Sharp.csproj",
+      "projectUniqueName": "E:\\Github\\Employee-Management-Console-Source-Code-C-Sharp\\Employee-Management-Console-Source-Code-C-Sharp\\Employee-Management-Console-Source-Code-C-Sharp.csproj",
       "projectName": "Employee-Management-Console-Source-Code-C-Sharp",
-      "projectPath": "D:\\Github\\Employee-Management-Console-Source-Code-C-Sharp\\Employee-Management-Console-Source-Code-C-Sharp.csproj",
+      "projectPath": "E:\\Github\\Employee-Management-Console-Source-Code-C-Sharp\\Employee-Management-Console-Source-Code-C-Sharp\\Employee-Management-Console-Source-Code-C-Sharp.csproj",
       "packagesPath": "C:\\Users\\phucc\\.nuget\\packages\\",
-      "outputPath": "D:\\Github\\Employee-Management-Console-Source-Code-C-Sharp\\obj\\",
+      "outputPath": "E:\\Github\\Employee-Management-Console-Source-Code-C-Sharp\\Employee-Management-Console-Source-Code-C-Sharp\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -33,6 +33,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -56,7 +57,8 @@
           "net47",
           "net471",
           "net472",
-          "net48"
+          "net48",
+          "net481"
         ],
         "assetTargetFallback": true,
         "warn": true,
@@ -65,7 +67,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.302\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
       }
     }
   }
