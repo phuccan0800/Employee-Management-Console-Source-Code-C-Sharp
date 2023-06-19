@@ -102,14 +102,17 @@ namespace Employee_Management_Console_Source_Code_C_Sharp
                     showEmployeeMenu(); 
                     break;
                 case "3":
-                    employeeController.DeleteEmployee();
+                    employeeController.DeleteEmployee(salaryController);
                     showEmployeeMenu(); 
                     break;
                 case "4":
+                    Console.Clear();
                     employeeController.SearchEmployee();
                     showEmployeeMenu();
                     break;
                 case "5":
+                    Console.Clear();
+                    employeeController.ViewEmployeeList();
                     employeeController.EditEmployee();
                     showEmployeeMenu();
                     break;
@@ -157,6 +160,8 @@ namespace Employee_Management_Console_Source_Code_C_Sharp
                     Console.Clear(); 
                     showProjectsMenu(); break;
                 case "3":
+                    Console.Clear();
+                    projectController.ViewProjectList();
                     projectController.DeleteProject(); showProjectsMenu(); break;
                 case "4":
                     Console.Clear();

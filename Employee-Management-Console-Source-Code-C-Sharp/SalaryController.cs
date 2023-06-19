@@ -8,8 +8,9 @@ namespace Employee_Management_Console_Source_Code_C_Sharp
 {
     public class SalaryController : ObserverController
     {
-        int LastSalaryID=0;
-        List<Salary> listSalary = new List<Salary>();
+        int LastSalaryID = 0;
+        private ObserverController observerController;
+        private List<Salary> listSalary = new List<Salary>();
         public SalaryController() { }
         public void ViewSalaryList()
         {
@@ -17,6 +18,10 @@ namespace Employee_Management_Console_Source_Code_C_Sharp
             {
                 Console.WriteLine(salary.ToString());
             }
+        }
+        public void SetObserver(ObserverController observerController)
+        {
+            this.observerController = observerController;
         }
         public void PaidSalary()
         {
@@ -33,9 +38,9 @@ namespace Employee_Management_Console_Source_Code_C_Sharp
             Console.Clear();
             Console.WriteLine("DONE !!!");
         }
-        public void UpdateNewInfor(string Action)
+        public void UpdateNewInfo(int IdDelete)
         {
-
+            this.listSalary.RemoveAll(s => s.GetEmployeeId() == IdDelete);
         }
         public void ReadSalary()
         {

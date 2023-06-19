@@ -68,22 +68,29 @@ namespace Employee_Management_Console_Source_Code_C_Sharp
                     break;
                 }
         }
-        public void DeleteEmployee() 
+        public void DeleteEmployee(SalaryController salaries) 
         {
             Console.Write("Enter ID of Employee you want to delete: ");
-            int IdDelete = int.Parse(Console.ReadLine()) -1;
+            int IdDelete = int.Parse(Console.ReadLine());
             Console.Write($"Are you sure for Delete {employees[IdDelete].GetName()}  ? (Y or N): ");
             string confirm = Console.ReadLine().ToUpper();
+            bool check = false;
             switch (confirm)
             {
                 case "N":
                     Console.WriteLine("Cancel !!");
                     break;
                 default:
-                    employees.RemoveAt(IdDelete);
+                    foreach (Employee employee in employees)
+                    {
+                        if (employee.GetID() == IdDelete) { employees.Remove(employee); check = true; break; }
+
+                    }
+                    if (check == true) { salaries.UpdateNewInfo(IdDelete); }
                     Console.WriteLine("Delete Employee Complete !!!");
                     break;
             }
+            
         }
         public void EditEmployee()
         {
@@ -145,7 +152,7 @@ namespace Employee_Management_Console_Source_Code_C_Sharp
                 }
             }
         }
-        public void UpdateNewInfo(String Action) 
+        public void UpdateNewInfo(int IdDelete) 
         { 
 
         }
@@ -173,6 +180,5 @@ namespace Employee_Management_Console_Source_Code_C_Sharp
             Employee employee2 = new Employee(int.Parse(data[0]), data[1], int.Parse(data[2]), data[3], data[4], data[5], DateTime.Parse(data[6]), DateTime.Parse(data[7]), data[8], int.Parse(data[9]));
             return employee2;
         }
-
     }
 }

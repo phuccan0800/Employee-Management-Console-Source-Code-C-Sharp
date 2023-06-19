@@ -6,18 +6,16 @@ using System.Threading.Tasks;
 
 namespace Employee_Management_Console_Source_Code_C_Sharp
 {
-    public class Project : ObserverController
+    public class Project
     {
         private int ID;
-        private Employee employee = new Employee();
         private int EmployeeID { get; set; }
-        private string ProjectName {  get; set; }
-        private string ProjectDetail { get; set; } 
+        private string ProjectName { get; set; }
+        private string ProjectDetail { get; set; }
         private int ProjectBonus { get; set; }
         private int Status { get; set; }
-        public void UpdateNewInfor() { }
         public Project() { }
-        public Project (int id, int employeeID, string projectName, string projectDetail, int projectBonus, int status) 
+        public Project(int id, int employeeID, string projectName, string projectDetail, int projectBonus, int status)
         {
             this.ID = id;
             this.EmployeeID = employeeID;
@@ -42,7 +40,8 @@ namespace Employee_Management_Console_Source_Code_C_Sharp
             else if (status == 3) return "Done !";
             else return "No Info";
         }
-        public string GetProjectName() {
+        public string GetProjectName()
+        {
             return this.ProjectName;
         }
         public void SetEmployeeID(int employeeID)
@@ -69,6 +68,5 @@ namespace Employee_Management_Console_Source_Code_C_Sharp
         {
             Status = status;
         }
-
     }
 }

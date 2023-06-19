@@ -39,9 +39,6 @@ namespace Employee_Management_Console_Source_Code_C_Sharp
         {
             return $"{this.SalaryId} | Employee {this.EmployeeID} | {this.DayWork} | {this.OverTime} | {this.PaidSalary} | {this.TotalSalary} | {this.RemaningSalary}";
         }
-        public void UpdateNewInfor()
-        {
-
-        }
+        public int GetEmployeeId() {   return this.EmployeeID;  }
     }
 }

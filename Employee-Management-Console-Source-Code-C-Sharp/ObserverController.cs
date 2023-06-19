@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace Employee_Management_Console_Source_Code_C_Sharp
 {
-    internal interface ObserverController
+    public interface ObserverController
     {
-        void UpdateNewInfo(String Action) { }
+        void UpdateNewInfo(int IdDelete);
     }
 }
